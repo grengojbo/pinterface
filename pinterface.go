@@ -27,8 +27,11 @@ type ISet interface {
 }
 
 type IHashMap interface {
+	Put(owner, key string, value interface{}, timeout int64) error
 	Set(owner, key, value string) error
 	Get(owner, key string) (string, error)
+	// Get(owner, key string) (interface{}, error)
+	// GetString(owner, key string) (string, error)
 	Has(owner, key string) (bool, error)
 	Exists(owner string) (bool, error)
 	GetAll() ([]string, error)
