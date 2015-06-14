@@ -92,6 +92,9 @@ type IUserState interface {
 	ConfirmUserByConfirmationCode(confirmationcode string) error
 	SetMinimumConfirmationCodeLength(length int)
 	GenerateUniqueConfirmationCode() (string, error)
+	GetToken(username string) (string, error)
+	SetToken(username string, token string, expired int64)
+	SetPassword(username string, passwd string)
 
 	Users() IHashMap
 	Host() IHost
