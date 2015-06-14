@@ -94,6 +94,7 @@ type IUserState interface {
 	GenerateUniqueConfirmationCode() (string, error)
 	GetToken(username string) (string, error)
 	SetToken(username string, token string, expired int64)
+	RemoveToken(username string)
 	SetPassword(username string, passwd string)
 
 	Users() IHashMap
